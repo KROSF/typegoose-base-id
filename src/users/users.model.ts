@@ -8,10 +8,9 @@ import { Field, ID, ObjectType } from 'type-graphql';
 
 @ObjectType()
 export class User extends Base {
-  [key: string]: any;
   @Field(() => ID, { name: 'id' })
   get relayId(this: DocumentType<User>): string {
-    return this._doc._id;
+    return this._id;
   }
 
   @Field()
